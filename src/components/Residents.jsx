@@ -103,7 +103,7 @@ console.log(allDimensions)
     <div className="">
       <div className="container_logo grid mt-[-100px]">
       <div className="logo z-40 flex justify-center  ">
-        <img src="/public/images/logo.png" alt=""  className="logo relative z-40" />
+        <img src="/images/logo.png" alt=""  className="logo relative z-40" />
       </div>
 
       <form onSubmit={dimentionAdd} className=" flex justify-center mt-[20px] ml-[-45px] ">
