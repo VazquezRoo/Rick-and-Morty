@@ -135,7 +135,7 @@ console.log(allDimensions)
       ))}
       </div>
       <div>
-           <ul className="relative z-[70] flex gap-[30px] mt-[-90px] justify-center">
+           <ul className="dimensions__pages relative z-[70] flex gap-[5px] mt-[-90px] justify-center">
             {
               arrayPages?.map(page => <li onClick={()=> setCurrentPage(page)} key={page} className={`text text-[brown] w-[40px] h-[40px] ${page === currentPage && "w-[50px] h-[50px] mt-[-5px]"} rounded-[50%] bg-[rgb(237,226,136)] border-[6px] border-[brown] flex items-center justify-center`}>{page}</li>)
             }
