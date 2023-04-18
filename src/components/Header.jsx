@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className="z-10 ">
     
-        <img src="../public/images/top1.png" alt=""  className="bg-backg object-cover"/>
+        <img src="../public/src/components/images/top1.png" alt=""  className="bg-backg object-cover"/>
            
     </div>
   );
