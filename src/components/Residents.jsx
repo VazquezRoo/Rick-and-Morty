@@ -125,7 +125,7 @@ console.log(allDimensions)
 
       </div>
 
-      <div className="card grid justify-center   justify-items-center mt-[120px] grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-[50px] max-w-[1400px] ">
+      <div className="card grid justify-center   justify-items-center mt-[120px] grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-[50px]  ">
        {residents?.slice(startCut, endCut).map((resident) => (
         
         <Card key={resident} info={resident} />
