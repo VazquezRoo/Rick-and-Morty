@@ -18,7 +18,7 @@ function App() {
           <Residents/>
         </section> 
 
-        <section className="">
+        <section >
           <Footer/>
         </section>
       </div>
