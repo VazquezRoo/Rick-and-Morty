@@ -14,7 +14,7 @@ function App() {
           <Header />
         </section>
 
-       <section className="mt-[50px] w-full p-[100px]">
+       <section className="mt-[50px] w-full max-w-[1200px]  grid items-center">
           <Residents/>
         </section> 
 

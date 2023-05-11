@@ -17,7 +17,7 @@ function Card({ info }) {
 
   return (
     <>
-        <section className="h-[350px] flex z-20 w-[220px] justify-center mt-[20px] gap-10 ">
+        <section className="h-[350px] flex z-20 w-[220px] justify-center mt-[20px] gap-6 ">
           {" "}
           <div
             className={`absolute   h-[140px] w-[140px]  ml-[60px] mb-[160px] z-[70]`}

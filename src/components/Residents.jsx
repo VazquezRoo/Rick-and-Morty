@@ -101,12 +101,12 @@ console.log(allDimensions)
 
   return (
     <div className="">
-      <div className="container_logo grid mt-[-100px]">
+      <div className="container_logo grid mt-[20px]">
       <div className="logo z-40 flex justify-center  ">
         <img src="/images/logo.png" alt=""  className="logo relative z-40" />
       </div>
 
-      <form onSubmit={dimentionAdd} className=" flex justify-center mt-[20px] ml-[-45px] ">
+      <form onSubmit={dimentionAdd} className=" flex justify-center mt-[20px] ml-[-45px] max-w-[1220px]">
         <input  id="searchD"
           type="text"
           className="w-[200px] h-[30px] z-40 rounded-[20px] border-[3px] border-[brown] text-center mr-[60px]"
@@ -125,7 +125,7 @@ console.log(allDimensions)
 
       </div>
 
-      <div className="card grid justify-center   justify-items-center mt-[120px] grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-[50px]  ">
+      <div className="card grid justify-center   justify-items-center mt-[120px] min-[700px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1200px]:grid-cols-4 gap-[50px]  ">
        {residents?.slice(startCut, endCut).map((resident) => (
         
         <Card key={resident} info={resident} />
