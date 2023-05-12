@@ -6,13 +6,12 @@ import './Residents.css'
 function Residents() {
 
 
-  const universes = () => {
-    
-  }
+ 
 
 
   
   const [dimensions, setDimensions] = useState();
+  const [changeUniverse, setChangeUniverse] = useState(true)
 
   useEffect(() => {
     const firstDimension = Math.floor(Math.random() * 126) + 1;
@@ -23,12 +22,11 @@ function Residents() {
       .then((res) => setDimensions(res.data))
       .catch((err) => console.log(err));
     console.log(dimensions);
-  }, []);
+  }, [changeUniverse]);
 
 
   const residents = dimensions?.residents;
   const numberResidents = dimensions?.residents.length
-  console.log(numberResidents);
 
 
 
@@ -93,30 +91,44 @@ useEffect(()=> {
     
 
 },[])
-console.log(allDimensions)
 
+const changeRandomUniverse = () => {
+  setChangeUniverse(!changeUniverse)
+}
 
 
 
 
   return (
-    <div className="max-w-screen">
-      <div className="container_logo grid mt-[20px]">
-      <div className="logo z-40 flex justify-center  ">
+    <div className="max-w-screen pt-[20px]">
+
+      {/* imagen del logo y form para busqueda */}
+      <div className="container_logo flex flex-col min-[750px]:flex-row min-[750px]:px-14 ">
+      <div className="logo z-40 flex justify-center justify-self-end">
         <img src="/images/logo.png" alt=""  className="logo relative z-40" />
       </div>
 
-      <form onSubmit={dimentionAdd} className=" flex justify-center mt-[20px] ml-[-45px] max-w-[1220px]">
+      <div className="flex flex-col items-center w-full min-[750px]:flex-row justify-end ">
+        <button onClick={changeRandomUniverse} className=" z-50">
+            <i class='bx bx-refresh text-[30px] text-white hover:text-green-400'></i>      
+          </button>
+      <form onSubmit={dimentionAdd} className=" flex justify-items-center justify-center w-full  max-w-[400px] px-2 ">
         <input  id="searchD"
           type="text"
-          className="w-[200px] h-[30px] z-40 rounded-[20px] border-[3px] border-[brown] text-center mr-[60px]"
+          className=" h-[30px] w-[70%]  z-40  border-[3px] border-[brown] text-start pl-[10px]"
           placeholder="Type a location Id..."
         />
-        <button className="absolute w-[100px] h-[30px] z-40 rounded-[20px] bg-yellow-300 ml-[180px] border-[3px] border-[brown] al ">
+        <button className="w-[30%] right-0  h-[30px] z-40  bg-yellow-300 border-[3px] border-[brown] self ">
+        
           Search
         </button>
       </form>
       </div>
+     
+      </div>
+
+      {/* Tabla de descripcion de los universos */}
+
       <div className="relative grid description_universe w-[90%] z-[70] bg-black text-white align-middle mt-[20px] font-[10px] justify-center bg-slate-600/60 mx-auto h-[160px] min-[550px]:grid-cols-3 min-[550px]:grid-row-2 min-[550px]:text-[20px] ">
         <p className="description__name self-center text-center text-[20px] min-[550px]:row-start-1  min-[550px]:col-span-3 min-[550px]:col-start-1 min-[550px]:text-[30px]"><b className="text-center">{dimensions?.name} </b> </p>
         <p className="description__type text-center"><b>Type: </b><span>{dimensions?.type}</span></p>
@@ -125,15 +137,17 @@ console.log(allDimensions)
 
       </div>
 
+      {/* div para mostrar las card de los residentes */}
+
       <div className="card grid justify-center   justify-items-center mt-[120px] grid-cols-[repeat(auto-fill,_250px)]  gap-[50px]  ">
        {residents?.slice(startCut, endCut).map((resident) => (
         
         <Card key={resident} info={resident} />
   
-          
-
       ))}
       </div>
+
+      {/* Paginacion */}
       <div>
            <ul className="dimensions__pages relative z-[70] flex gap-[5px] mt-[-90px] justify-center">
             {

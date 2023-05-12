@@ -4,15 +4,15 @@ import React, { useEffect, useState } from "react";
 function Card({ info }) {
   const [infoResident, setInfoResident] = useState();
 
+  // Efecto para traer los residentes
+
   useEffect(() => {
     axios
       .get(info)
       .then((res) => setInfoResident(res.data))
       .catch((err) => console.log(err));
     console.log(infoResident);
-
-
-    
+  
   }, []);
 
   return (
@@ -22,6 +22,9 @@ function Card({ info }) {
           <div
             className={`absolute   h-[140px] w-[140px]  ml-[60px] mb-[160px] z-[70]`}
           >
+
+            {/* imagen */}
+
             <div className="flex justify-center align-middle mt-[-100px] ml-[-50px] ">
               <img
                 src={infoResident?.image}
@@ -29,6 +32,10 @@ function Card({ info }) {
                 className=" bg-cover self-center h-[140px] w-[140px]  rounded-[50%] border-[6px] border-[brown] "
               />
             </div>
+
+
+            {/* Status */}
+
             <div className="absolute flex align-middle justify-center h-[20px] w-[100px] z-50 ml-[-10px] mt-[-20px] border-[2px] border-[brown]  bg-black">
               {
                 infoResident?.status === 'Dead' ?
@@ -51,6 +58,8 @@ function Card({ info }) {
 
             </div>
           </div>
+
+          {/* informacion */}
           <div className="flex flex-col border-[6px] border-[brown] rounded-[20px] w-[280px] h-[200px] bg-[rgb(133,104,136)] z-40">
             <div className="flex h-[140px] bg-[rgb(237,226,136)] rounded-[14px] z-50 justify-center items-center">
               <h3 className="mt-[20px] text-[rgb(156,85,82)] text-center">
