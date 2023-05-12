@@ -17,7 +17,7 @@ function Card({ info }) {
 
   return (
     <>
-        <section className="h-[350px] flex z-20 w-[220px] justify-center mt-[20px] gap-6 ">
+        <section className="h-[350px] flex z-20 w-[240px] justify-center mt-[20px] gap-6 ">
           {" "}
           <div
             className={`absolute   h-[140px] w-[140px]  ml-[60px] mb-[160px] z-[70]`}
@@ -53,7 +53,7 @@ function Card({ info }) {
           </div>
           <div className="flex flex-col border-[6px] border-[brown] rounded-[20px] w-[280px] h-[200px] bg-[rgb(133,104,136)] z-40">
             <div className="flex h-[140px] bg-[rgb(237,226,136)] rounded-[14px] z-50 justify-center items-center">
-              <h3 className="mt-[20px] text-[rgb(156,85,82)]">
+              <h3 className="mt-[20px] text-[rgb(156,85,82)] text-center">
                 <b>{infoResident?.name}</b>
               </h3>
             </div>

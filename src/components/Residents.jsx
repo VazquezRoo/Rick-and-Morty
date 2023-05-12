@@ -100,7 +100,7 @@ console.log(allDimensions)
 
 
   return (
-    <div className="">
+    <div className="max-w-screen">
       <div className="container_logo grid mt-[20px]">
       <div className="logo z-40 flex justify-center  ">
         <img src="/images/logo.png" alt=""  className="logo relative z-40" />
@@ -117,15 +117,15 @@ console.log(allDimensions)
         </button>
       </form>
       </div>
-      <div className="relative grid description_universe z-[70] bg-black text-white align-middle mt-[20px] font-[10px] justify-center bg-slate-600/60 mx-auto h-[140px]">
-        <p className="description__name self-center text-center text-[20px]"><b>{dimensions?.name} </b> </p>
+      <div className="relative grid description_universe w-[90%] z-[70] bg-black text-white align-middle mt-[20px] font-[10px] justify-center bg-slate-600/60 mx-auto h-[160px] min-[550px]:grid-cols-3 min-[550px]:grid-row-2 min-[550px]:text-[20px] ">
+        <p className="description__name self-center text-center text-[20px] min-[550px]:row-start-1  min-[550px]:col-span-3 min-[550px]:col-start-1 min-[550px]:text-[30px]"><b className="text-center">{dimensions?.name} </b> </p>
         <p className="description__type text-center"><b>Type: </b><span>{dimensions?.type}</span></p>
         <p className="description__dimension text-center"><b>Dimension: </b>  <span>{dimensions?.dimension}</span></p>
         <p className="description__population text-center"><b>Population: </b>  <span>{dimensions?.residents.length}</span></p>
 
       </div>
 
-      <div className="card grid justify-center   justify-items-center mt-[120px] min-[700px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1200px]:grid-cols-4 gap-[50px]  ">
+      <div className="card grid justify-center   justify-items-center mt-[120px] grid-cols-[repeat(auto-fill,_250px)]  gap-[50px]  ">
        {residents?.slice(startCut, endCut).map((resident) => (
         
         <Card key={resident} info={resident} />
