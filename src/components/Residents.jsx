@@ -21,7 +21,6 @@ function Residents() {
       .get(URL)
       .then((res) => setDimensions(res.data))
       .catch((err) => console.log(err));
-    console.log(dimensions);
   }, [changeUniverse]);
 
 

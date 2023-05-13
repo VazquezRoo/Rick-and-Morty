@@ -11,7 +11,6 @@ function Card({ info }) {
       .get(info)
       .then((res) => setInfoResident(res.data))
       .catch((err) => console.log(err));
-    console.log(infoResident);
   
   }, []);
 
